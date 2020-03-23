@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main-section add-bg">
+        <div id="content-wrapper">
+            <h1 class="heading-text">
+                DJANGO DICTIONARY
+            </h1>
+            <form action="{% url 'meaning' %}" method="GET">
+                <input type="search" name="word" class="input-home" id="search-field" required
+                placeholder="Search for word's meaning, examples, etc...">
+                <input type="submit" value="Search" class="btn-home" id="search-btn"
+                style="padding: 10px 15px; font-size: 24px;">
+                <br /> <br />
+            </form>
+        </div>
+    </div>
+{% endblock %}

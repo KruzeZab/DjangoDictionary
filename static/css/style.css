@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat';   
+}
+
+.container-fluid {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.dict-text-primary {
+    color: #051933 !important;
+}
+
+.dict-bg-primary {
+    background-color: #051933 !important;
+}
+
+.d-inline {
+    display: inline;
+}
+
+/* home page */
+.main-section {
+    position: relative;
+    height: 100vh;
+}
+/* toggle bg effect on form foucs */
+.add-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url(
+    'https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.remove-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url(
+    'https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* whole wrapper */
+#content-wrapper {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* home page title DJANGO DICTIONARY */
+.heading-text {
+    font-size: 5em;
+    color: white;
+    font-weight: bolder;
+}
+
+/* home page search box */
+.input-home {
+    width: 80%;
+    margin-top: 40px;
+    padding: 8px;
+    font-size: 24px;
+}
+
+.input-home:hover {
+    box-shadow: 0px 0px 100px rgb(19, 17, 17);
+}
+
+/* home page search button */
+#search-btn {
+    border: none;
+    background-color: rgb(13, 119, 145);
+    color: white;
+    letter-spacing: 1px;   
+}
+
+#search-btn:hover {
+    cursor: pointer;
+    background-color: rgb(9, 82, 100);
+    transition: 0.2s ease-in;
+}
+
+/* meaning.html */
+
+.super-underline {
+    border: 1px dashed red; 
+    margin: 10px 0px; 
+    border-width: thin;
+}
+
+/* second page search box */
+.input-second {
+    width: 80%;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* second apge search button */
+.btn-second {
+    border-radius: 20px;
+    margin-bottom: 5px;
+    padding: 8px 40px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+/* play voice button */
+.play {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.play:hover {
+    cursor: pointer;
+}
+
+/* meaning  */
+.page {
+    margin-top: 20px;
+}
+
+.word-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.word-meaning {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.example, .no-example {
+    margin-top: 10px;
+    font-size: 18px;
+    font-style: italic;   
+}
+
+.footer {
+    text-align: center; 
+    font-size: 68px;
+}
+/* word not found */
+.not-found {
+    width: 100%;
+    font-size: 36px; 
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* ipad and below */
+@media (max-width: 991.98px) {
+    /* home page */
+    /* decrease heading size */
+    .heading-text {
+        font-size: 2.8rem;
+    }
+    /* give some extra space on button */
+    .btn-home {
+        margin-top: 20px;
+        width: 40%;
+    }
+
+    /* second page */
+    .input-second {
+        border-radius: 5px;
+    }
+
+    .btn-second {
+        margin-top: 20px;
+        width: 50%;
+        border-radius: 10px;
+    }
+}

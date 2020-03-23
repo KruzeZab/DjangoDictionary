@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ q }} meaning | {% endblock %}
+
+{% block content %}
+  <nav class="navbar dict-bg-primary" style="text-align: center;">
+    <div class="container">
+      <form action="{% url 'meaning' %}" method="GET" style="padding: 8px 0;">
+        <input type="search" placeholder="Search for word's meaning, examples, etc..." name="word" class="input-second"
+          id="search-field">
+        <input type="submit" value="Search" class="btn-second" id="search-btn">
+      </form>
+    </div>
+  </nav>
+
+  <!-- Meaning -->
+  <div id="wrapper">
+    {% for meaning in meanings %}
+      <div class="container" style="background-color: white;">
+        <div class="page">
+          <div class="super-entry" style="font-size: 18px; padding-top: 20px;">
+            <div class="container-fluid dict-text-primary">
+              Meaning of {{ meaning.word }}
+              <hr class="super-underline">
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="word-name" style="margin-bottom: 10px;">
+              <span class="main-word dict-text-primary">
+                {{ meaning.word }}
+              </span>
+              <button class="play">
+                <i class="fas fa-lg fa-volume-up"></i>
+              </button>
+            </div>
+            <div class="type">
+              {{ meaning.type }}
+            </div><br />
+            <div class="word-meaning dict-text-primary">
+              &#x2023; {{ meaning.definition }}
+            </div><br />
+            <div class="word-examples">
+              <h3 class="dict-text-primary">Examples:</h3>
+
+              <div class="example-list">
+                {% for examp in meaning.example %}
+                <div class="example dict-text-primary">&#x2022; {{ examp }} </div>
+                {% empty %}
+                <div class="no-example">Not available</div>
+                {% endfor %}
+              </div>
+            </div><br />
+          </div>
+        </div>
+      </div>
+      {% empty %}
+        <h2 class="not-found">No results found.</h2>
+    {% endfor %}
+  </div>
+
+    <footer class="footer" style="background-color: rgb(240, 238, 238);">
+      &#x2022; &#x2022; &#x2022;
+    </footer>
+{% endblock %}
